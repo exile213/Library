@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <script src="script.js"></script>
     <title>Library</title>
 </head>
 <body>
@@ -15,23 +14,31 @@
         
         <main class="main-content-container">
             <div class="new-button-container">
-                <button class="new-button">New Book</button>
+                <button id="new-button">New Book</button>
             </div>
-                <form class ="form-container">
-                    <label for="booktitle">Book Title: </label>
-                    <input type="text" name="booktitle" id="booktitle">
-                    <label for="bookauthor">Book Author: </label>
-                    <input type="text" name="bookauthor" id="bookclass">
-                    <label for="pageno">Number of Pages: </label>
-                    <input type="number" name="pageno"  id="pageno">
-                    <label for="isread">Has been read yet? </label>
-                    <input type="checkbox" name="isread" id="isread"> 
-                </form>>
-
 
         </main>
 
+        <!---FORM PANEL, APPEARS ONLY AFTER PRESSING NEW BOOK BUTTON-->
+        <div id="bg-form-container">
+            <form class ="form-container">
+                <div class="form-Title">Add A New Book</div>
+                <label for="booktitle">Book Title: </label>
+                <input type="text" name="booktitle" id="booktitle" required>
+                <label for="bookauthor">Book Author: </label>
+                <input type="text" name="bookauthor" id="bookclass" required>
+                <label for="pageno">No. of Pages: </label>
+                <input type="number" name="pageno"  id="pageno" required>
+                <label for="isread">Has been read? </label>
+                <input type="checkbox" name="isread" id="isread" required> 
+                <button class="form-buttons">Submit</button>
+                <button class="form-buttons" id="cancel-button">Cancel</button>
+            </form>
+    
+    
 
+        </div>
     </div>
+    <script src="script.js"></script>
 </body>
 </html>

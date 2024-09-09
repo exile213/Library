@@ -1,3 +1,20 @@
+let hiddenPanel = document.getElementById("bg-form-container");
+let newBookButton = document.getElementById("new-button");
+let cancelButton = document.getElementById("cancel-button");
+
+newBookButton.addEventListener("click",function(){
+   hiddenPanel.style.visibility = "visible";
+});
+
+cancelButton.addEventListener("click",function(){
+  hiddenPanel.style.visibility = "hidden";
+});
+
+
+
+
+
+//ODIN PROJECT LOGIC
 const myLibrary = [];
 
 //constructor
