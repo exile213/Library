@@ -89,7 +89,7 @@ function displayBooks(){
       //add text content to the book info elements
       newTitle.textContent = "Book title: " + myLibrary[i].title;
       newAuthor.textContent = "Book author: "+ myLibrary[i].author;
-      newPages.textContent = "Number of Pages: "+ myLibrary[i].pages;
+      newPages.textContent = "No. of Pages: "+ myLibrary[i].pages;
       deleteButton.textContent= "Delete";
 
       //check if book has been read
