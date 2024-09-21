@@ -26,6 +26,7 @@ submitButton.addEventListener("click",function(){
   event.preventDefault();
   addBookToLibrary();
   displayBooks();
+
 });
 
 
@@ -48,6 +49,12 @@ function book(title,author,pages,isRead){
 function addBookToLibrary() {
   newBook = new book(bookTitle.value,bookAuthor.value,noOfPages.value,didRead.checked);
   myLibrary.push(newBook);
+
+  //clear form after add
+  bookTitle.value="";
+  bookAuthor.value="";
+  noOfPages.value="";
+  didRead.checked=false;
 }
 
 function displayBooks(){
@@ -75,10 +82,10 @@ function displayBooks(){
       newRead.className = "grid-text";
 
       //add text content to the book info elements
-      newTitle.textContent = myLibrary[i].title;
-      newAuthor.textContent = myLibrary[i].author;
-      newPages.textContent = myLibrary[i].pages;
-      newRead.textContent = myLibrary[i].isRead;
+      newTitle.textContent = "Book title: " + myLibrary[i].title;
+      newAuthor.textContent = "Book author: "+ myLibrary[i].author;
+      newPages.textContent = "Number of Pages: "+ myLibrary[i].pages;
+      newRead.textContent = "Has been Read? "+myLibrary[i].isRead;
 
       //add book info elements inside grid card
       newCard.appendChild(newTitle);

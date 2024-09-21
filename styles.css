@@ -6,11 +6,11 @@
 }
 
 :root{
-    --primary-color:#667BC6;
-    --secondary-color:#FDFFD2;
-    --contrasting-color:#FFB4C2;
-    --complementary-color:#DA7297;
-    --highlight-complentary-color:#db88a5;
+    --primary-color:#6256CA;
+    --secondary-color:#86D293 ;
+    --contrasting-color:#C1E2A4;
+    --complementary-color:#FDFAD9;
+    --highlight-color:#f0e897;
     --Header-text-size:50px;
     --button-text-size:30px;
     --form-title-size:25px;
@@ -34,14 +34,16 @@ body,html{
     height: 20%;
     display: flex;
     justify-content: center;
+    align-items: center;
     background: var(--primary-color);
     padding:20px;
 }
 
 .title{
-    color: var(--secondary-color);
+    color: var(--complementary-color);
     font-size: var(--Header-text-size);
     font-weight:1000;
+    font-size: 80px;
 }
 
 .main-content-container{
@@ -70,7 +72,7 @@ body,html{
 }
 
 #new-button:hover{
-    background: var(--contrasting-color);
+    background: var(--highlight-color);
 }   
 
 #grid-card-container{
@@ -84,9 +86,11 @@ body,html{
 .grid-card{
     width: 350px;
     height: 450px;
-    padding:10px;
+    padding:20px;
     border-radius: 10px;
-    background:var(--highlight-complentary-color); 
+    background:var(--complementary-color); 
+    display: grid;
+    justify-items: start;
 
 }
 
@@ -94,6 +98,7 @@ body,html{
     color:var(--secondary-color);
     text-align: center;
     font-weight: 800;
+    font-size: 20px;
 }
 
 
@@ -151,7 +156,7 @@ label{
 }
 
 .form-buttons:hover{
-    background:var(--highlight-complentary-color) ;
+    background:var(--highlight-color) ;
 }
 
 
