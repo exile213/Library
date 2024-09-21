@@ -8,10 +8,12 @@ let gridContainer = document.getElementById("grid-card-container");
 
 
 //form inputs 
+let form = document.getElementById("form-container");
 let bookTitle = document.getElementById("booktitle");
 let bookAuthor = document.getElementById("bookauthor");
 let noOfPages = document.getElementById("pageno");
 let didRead = document.getElementById("isread");
+
 
 newBookButton.addEventListener("click",function(){
    hiddenPanel.style.visibility = "visible";
@@ -21,13 +23,12 @@ cancelButton.addEventListener("click",function(){
   hiddenPanel.style.visibility = "hidden";
 });
 
-submitButton.addEventListener("click",function(){
+form.addEventListener("submit",function(){
   hiddenPanel.style.visibility = "hidden";
   event.preventDefault();
   addBookToLibrary();
   displayBooks();
-
-});
+  })
 
 
 
@@ -73,25 +74,24 @@ function displayBooks(){
       let newTitle =document.createElement("div");
       let newAuthor =document.createElement("div");
       let newPages =document.createElement("div");
-      let newRead = document.createElement("div");
+     /* let readButton = document.createElement("button");
+      let deleteButton = document.createElement("button");*/
+
       
       //adds class to new book info elements
       newTitle.className = "grid-text";
       newAuthor.className = "grid-text"
       newPages.className = "grid-text";
-      newRead.className = "grid-text";
 
       //add text content to the book info elements
       newTitle.textContent = "Book title: " + myLibrary[i].title;
       newAuthor.textContent = "Book author: "+ myLibrary[i].author;
       newPages.textContent = "Number of Pages: "+ myLibrary[i].pages;
-      newRead.textContent = "Has been Read? "+myLibrary[i].isRead;
 
       //add book info elements inside grid card
       newCard.appendChild(newTitle);
       newCard.appendChild(newAuthor);
       newCard.appendChild(newPages);
-      newCard.appendChild(newRead);
 
       //add grid card element to grid card container element
       gridContainer.appendChild(newCard);

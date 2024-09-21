@@ -22,7 +22,7 @@
         </main>
         <!---FORM PANEL, APPEARS ONLY AFTER PRESSING NEW BOOK BUTTON-->
         <div id="bg-form-container">
-            <form class ="form-container">
+            <form id="form-container" >
                 <div class="form-Title">Add A New Book</div>
                 <label for="booktitle">Book Title: </label>
                 <input type="text" name="booktitle" id="booktitle" required>
@@ -31,8 +31,8 @@
                 <label for="pageno">No. of Pages: </label>
                 <input type="number" name="pageno"  id="pageno" required>
                 <label for="isread">Has been read? </label>
-                <input type="checkbox" name="isread" id="isread" required> 
-                <button type ="submit" class="form-buttons" id="submit-button">Add book</button>
+                <input type="checkbox" name="isread" id="isread"> 
+                <button type="submit" class="form-buttons" id="submit-button">Add book</button>
                 <button class="form-buttons" id="cancel-button">Cancel</button> 
 
             </form>
