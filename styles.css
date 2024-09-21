@@ -89,7 +89,7 @@ body,html{
     padding:20px;
     border-radius: 10px;
     background:var(--complementary-color); 
-    border:3px solid var(--primary-color);
+    box-shadow: 8px 5px 1px 8px var(--primary-color);
     display: grid;
     justify-items: start;
 
@@ -99,9 +99,22 @@ body,html{
     color:var(--secondary-color);
     text-align: center;
     font-weight: 800;
-    font-size: 20px;
+    font-size: 26px;
 }
 
+
+.grid-read{
+    border: var(--primary-color) 2px solid;
+    color: var(--complementary-color);
+    background:var(--secondary-color);
+    border-radius: 10px;
+    width:95%;
+    text-align: center;
+    padding:10px;
+    height: 50px;
+    font-weight: 800;
+    font-size: 15px;
+}
 
 
 /*HIDDEN FORM SECTION------------------------------*/

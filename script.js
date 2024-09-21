@@ -74,26 +74,42 @@ function displayBooks(){
       let newTitle =document.createElement("div");
       let newAuthor =document.createElement("div");
       let newPages =document.createElement("div");
-     /* let readButton = document.createElement("button");
-      let deleteButton = document.createElement("button");*/
+      let readButton = document.createElement("button");
+      let deleteButton = document.createElement("button");
 
       
       //adds class to new book info elements
       newTitle.className = "grid-text";
-      newAuthor.className = "grid-text"
+      newAuthor.className = "grid-text";
       newPages.className = "grid-text";
+      readButton.className = "grid-read";
+
 
       //add text content to the book info elements
       newTitle.textContent = "Book title: " + myLibrary[i].title;
       newAuthor.textContent = "Book author: "+ myLibrary[i].author;
       newPages.textContent = "Number of Pages: "+ myLibrary[i].pages;
+      readButton.textContent = "Read";
 
-      //add book info elements inside grid card
+      //add elements inside grid card
       newCard.appendChild(newTitle);
       newCard.appendChild(newAuthor);
       newCard.appendChild(newPages);
+      newCard.appendChild(readButton);
 
       //add grid card element to grid card container element
       gridContainer.appendChild(newCard);
+
+
+      //Read button event listener
+      readButton.addEventListener("click",function(){
+        if(myLibrary[i].isRead == true){
+          myLibrary[i].isRead = false;
+          readButton.style.background = "red";
+        } else{
+          myLibrary[i].isRead = true;
+          readButton.style.background = "var(--secondary-color)";
+        }
+      });
     }
 }
