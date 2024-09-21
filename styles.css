@@ -66,28 +66,37 @@ body,html{
     border-radius: 10px;
     background: var(--complementary-color);
     color: var(--secondary-color);
+    margin-bottom: 20px;
 }
 
 #new-button:hover{
     background: var(--contrasting-color);
 }   
 
-.grid-card-container{
+#grid-card-container{
     width: 100%;
     display: grid;
     grid-template-columns: repeat(3,1fr);
+    justify-items: center;
     gap:10px;
 }
 
 .grid-card{
-    width: 300px;
-    height: 400px;
+    width: 350px;
+    height: 450px;
     padding:10px;
     border-radius: 10px;
     background:var(--highlight-complentary-color); 
-    color:var(--secondary-color);
 
 }
+
+.grid-text{
+    color:var(--secondary-color);
+    text-align: center;
+    font-weight: 800;
+}
+
+
 
 /*HIDDEN FORM SECTION------------------------------*/
 #bg-form-container{

@@ -3,6 +3,9 @@ let newBookButton = document.getElementById("new-button");
 let cancelButton = document.getElementById("cancel-button");
 let submitButton = document.getElementById("submit-button");
 
+//grid container
+let gridContainer = document.getElementById("grid-card-container");
+
 
 //form inputs 
 let bookTitle = document.getElementById("booktitle");
@@ -19,9 +22,10 @@ cancelButton.addEventListener("click",function(){
 });
 
 submitButton.addEventListener("click",function(){
-  addBookToLibrary();
-  //displayBooks();
+  hiddenPanel.style.visibility = "hidden";
   event.preventDefault();
+  addBookToLibrary();
+  displayBooks();
 });
 
 
@@ -29,7 +33,7 @@ submitButton.addEventListener("click",function(){
 
 
 //ODIN PROJECT LOGIC
-let myLibrary = [];
+const myLibrary = [];
 
 
 //-------------------------------------------
@@ -44,11 +48,45 @@ function book(title,author,pages,isRead){
 function addBookToLibrary() {
   newBook = new book(bookTitle.value,bookAuthor.value,noOfPages.value,didRead.checked);
   myLibrary.push(newBook);
-  console.log(myLibrary[0].title);
 }
 
 function displayBooks(){
-    for(let i = 0; i<=Array.length-1;i++){
-        
+    //DELETE PREEXISTING GRID CARDS
+    const deleteVar = gridContainer.querySelectorAll(".grid-card");
+    deleteVar.forEach((deleteCard)=>{deleteCard.remove()});
+
+
+    //CREATE AND DISPLAY 
+    for(let i = 0; i<=myLibrary.length-1;i++){
+      //create grid card
+       let newCard = document.createElement("div");
+       newCard.className = "grid-card";
+
+      //create book info elements
+      let newTitle =document.createElement("div");
+      let newAuthor =document.createElement("div");
+      let newPages =document.createElement("div");
+      let newRead = document.createElement("div");
+      
+      //adds class to new book info elements
+      newTitle.className = "grid-text";
+      newAuthor.className = "grid-text"
+      newPages.className = "grid-text";
+      newRead.className = "grid-text";
+
+      //add text content to the book info elements
+      newTitle.textContent = myLibrary[i].title;
+      newAuthor.textContent = myLibrary[i].author;
+      newPages.textContent = myLibrary[i].pages;
+      newRead.textContent = myLibrary[i].isRead;
+
+      //add book info elements inside grid card
+      newCard.appendChild(newTitle);
+      newCard.appendChild(newAuthor);
+      newCard.appendChild(newPages);
+      newCard.appendChild(newRead);
+
+      //add grid card element to grid card container element
+      gridContainer.appendChild(newCard);
     }
 }
