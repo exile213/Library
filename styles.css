@@ -116,6 +116,18 @@ body,html{
     font-size: 15px;
 }
 
+.grid-delete{
+    border: var(--primary-color) 2px solid;
+    color: var(--complementary-color);
+    background:var(--secondary-color);
+    border-radius: 10px;
+    width:95%;
+    text-align: center;
+    padding:10px;
+    height: 50px;
+    font-weight: 800;
+    font-size: 15px;
+}
 
 /*HIDDEN FORM SECTION------------------------------*/
 #bg-form-container{

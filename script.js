@@ -83,19 +83,30 @@ function displayBooks(){
       newAuthor.className = "grid-text";
       newPages.className = "grid-text";
       readButton.className = "grid-read";
+      deleteButton.className = "grid-delete";
 
 
       //add text content to the book info elements
       newTitle.textContent = "Book title: " + myLibrary[i].title;
       newAuthor.textContent = "Book author: "+ myLibrary[i].author;
       newPages.textContent = "Number of Pages: "+ myLibrary[i].pages;
-      readButton.textContent = "Read";
+      deleteButton.textContent= "Delete";
+
+      //check if book has been read
+      if(myLibrary[i].isRead == true){
+        readButton.style.background = "var(--secondary-color)";
+        readButton.textContent = "Has been Read";
+      } else{
+        readButton.style.background = "red";
+        readButton.textContent = "Has not been Read";
+      }
 
       //add elements inside grid card
       newCard.appendChild(newTitle);
       newCard.appendChild(newAuthor);
       newCard.appendChild(newPages);
       newCard.appendChild(readButton);
+      newCard.appendChild(deleteButton);
 
       //add grid card element to grid card container element
       gridContainer.appendChild(newCard);
@@ -106,10 +117,20 @@ function displayBooks(){
         if(myLibrary[i].isRead == true){
           myLibrary[i].isRead = false;
           readButton.style.background = "red";
+          readButton.textContent = "Has not been Read";
         } else{
           myLibrary[i].isRead = true;
           readButton.style.background = "var(--secondary-color)";
+          readButton.textContent = "Has been Read";
         }
+      });
+
+
+      //DELETE button event listener
+      deleteButton.addEventListener("click",function(){
+        let targetCard = gridContainer.querySelectorAll(".grid-card");
+        targetCard[i].remove();
+        myLibrary.splice(i,1);
       });
     }
 }
