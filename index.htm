@@ -17,8 +17,14 @@
                 <button id="new-button">New Book</button>
             </div>
 
+            <div class="grid-card-container">
+                <div class="grid-card">
+                    <div class="text">Dummy content</div>
+                    <div class="text">Dummy content</div>
+                    <div class="text">Dummy content</div>
+                </div>
+            </div>
         </main>
-
         <!---FORM PANEL, APPEARS ONLY AFTER PRESSING NEW BOOK BUTTON-->
         <div id="bg-form-container">
             <form class ="form-container">
@@ -26,15 +32,16 @@
                 <label for="booktitle">Book Title: </label>
                 <input type="text" name="booktitle" id="booktitle" required>
                 <label for="bookauthor">Book Author: </label>
-                <input type="text" name="bookauthor" id="bookclass" required>
+                <input type="text" name="bookauthor" id="bookauthor" required>
                 <label for="pageno">No. of Pages: </label>
                 <input type="number" name="pageno"  id="pageno" required>
                 <label for="isread">Has been read? </label>
                 <input type="checkbox" name="isread" id="isread" required> 
-                <button class="form-buttons">Submit</button>
-                <button class="form-buttons" id="cancel-button">Cancel</button>
+                <button type ="submit" class="form-buttons" id="submit-button">Add book</button>
+                <button class="form-buttons" id="cancel-button">Cancel</button> 
+                
             </form>
-    
+            
     
 
         </div>

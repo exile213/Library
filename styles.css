@@ -62,7 +62,7 @@ body,html{
     font-size: var(--button-text-size);
     font-weight: 800;
     padding:20px;
-    border:var(--contrasting-color) 2px solid;
+    border:var(--primary-colorr) 2px solid;
     border-radius: 10px;
     background: var(--complementary-color);
     color: var(--secondary-color);
@@ -70,8 +70,38 @@ body,html{
 
 #new-button:hover{
     background: var(--contrasting-color);
+}   
+
+.grid-card-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:10px;
 }
 
+.grid-card{
+    width: 300px;
+    height: 400px;
+    padding:10px;
+    border-radius: 10px;
+    background:var(--highlight-complentary-color); 
+    color:var(--secondary-color);
+
+}
+
+/*HIDDEN FORM SECTION------------------------------*/
+#bg-form-container{
+    visibility:hidden;
+    position:absolute;
+    background:#4c4c4d69;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .form-container{
     width: 400px;
     height: 500px;
@@ -88,18 +118,6 @@ body,html{
     gap:20px;
 }
 
-#bg-form-container{
-    visibility:hidden;
-    position:absolute;
-    background:#4c4c4d69;
-    top:0;
-    left:0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 .form-Title{
     grid-column: 1/3;
